@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart extension cord with alexa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00ff88;
+            --secondary-color: #0088ff;
+            --dark-bg: #121212;
+            --darker-bg: #0a0a0a;
+            --text-color: #f5f5f5;
+            --text-muted: #aaaaaa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Particle Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background-color: var(--darker-bg);
+            opacity: 0.5;
+        }
+
+        /* Floating Nav */
+        .floating-nav {
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .nav-link i {
+            font-size: 0.9rem;
+        }
+
+        /* Project Container */
+        .project-container {
+            max-width: 1200px;
+            margin: 120px auto 80px;
+            padding: 0 5%;
+        }
+
+        /* Project Hero */
+        .project-hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .project-title {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+        }
+
+        .project-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-label {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .meta-value {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Media Showcase */
+        .media-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .media-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            transition: all 0.3s ease;
+        }
+
+        .media-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
+        }
+
+        .media-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.9);
+            transition: filter 0.3s ease;
+        }
+
+        .media-card:hover img {
+            filter: brightness(1);
+        }
+
+        .media-card.video-card::after {
+            content: '\f04b';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .media-card.video-card:hover::after {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        /* Project Sections */
+        .project-section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .section-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .section-text {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .section-text p {
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tech-item {
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .section-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Video Container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Full Width Video - Now at bottom */
+        .fullwidth-video {
+            margin: 80px 0;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            display: none; /* Hidden by default, shown on mobile */
+        }
+
+        .fullwidth-video video {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .project-title {
+                font-size: 3rem;
+            }
+            
+            .section-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-image {
+                order: -1;
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2.5rem;
+            }
+            
+            .project-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .floating-nav {
+                top: 20px;
+                padding: 10px 20px;
+            }
+
+            /* Show full width video on mobile and hide the one in results section */
+            .fullwidth-video {
+                display: block;
+            }
+            .video-container {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .project-title {
+                font-size: 2rem;
+            }
+            
+            .project-container {
+                margin-top: 100px;
+            }
+            
+            .media-showcase {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Floating Navigation -->
+    <nav class="floating-nav">
+        <a href="#" class="nav-link active">
+            <i class="fas fa-home"></i> Project
+        </a>
+        <a href="#" class="nav-link">
+            <i class="fas fa-images"></i> Gallery
+        </a>
+        <a href="#" class="nav-link">
+            <i class="fas fa-video"></i> Demo
+        </a>
+    </nav>
+
+    <!-- Project Container -->
+    <div class="project-container">
+        <!-- Project Hero -->
+        <section class="project-hero">
+            <h1 class="project-title floating">Smart extension cord</h1>
+            <p class="project-subtitle">An ESP32-powered smart extension for remote switch control, integrated with Alexa for voice commands</p>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Category</div>
+                    <div class="meta-value">IoT/Home Automation</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Year</div>
+                    <div class="meta-value">2024</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Status</div>
+                    <div class="meta-value">Completed</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media Showcase -->
+        <section class="media-showcase">
+            <div class="media-card">
+                <img src="alexasmart.png" alt="rc rover">
+            </div>
+            <div class="media-card">
+                <img src="https://content.instructables.com/F9D/CNRY/LBDNVMRH/F9DCNRYLBDNVMRH.png?auto=webp&fit=bounds&frame=1&height=1024&width=1024auto=webp&frame=1&height=150" alt="rc rover">
+            </div>
+        </section>
+
+        <!-- Results Section -->
+       <!-- In your Results section -->
+<section class="project-section">
+    <h2 class="section-title">Results</h2>
+    <div class="section-content">
+        <div class="section-text">
+            <p>This Smart Extension is built using an ESP32, enabling seamless control of two switches via Alexa integration. The ESP32 is programmed to connect with Alexa, allowing users to control connected devices with simple voice commands. This project showcases how an ESP32 can be leveraged to create a smart home solution, with the flexibility to manage switches remotely through an easy-to-use voice assistant interface. By combining IoT technology with Alexa, this project offers a simple and effective way to automate home appliances and elevate user convenience.</p>
+        </div>
+        <div class="video-container">
+            <video controls poster="alexasmart.png">
+                <source src="alexalight.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</section>
+
+<!-- Full Width Video (shown only on mobile) -->
+<div class="fullwidth-video">
+    <video controls poster="alexasmart.png">
+        <source src="alexalight.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 40,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#00ff88"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#00ff88",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": false,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 0.5
+                        }
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Floating nav effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.floating-nav');
+            if (window.scrollY > 100) {
+                nav.style.top = '10px';
+                nav.style.background = 'rgba(10, 10, 10, 0.95)';
+            } else {
+                nav.style.top = '30px';
+                nav.style.background = 'rgba(10, 10, 10, 0.8)';
+            }
+        });
+    </script>
+</body>
+</html>

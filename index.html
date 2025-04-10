@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laksindu Janith</title>
+    <link rel="icon" href="logo1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Subtle Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">Laksindu <span>Janith</span></a>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="close-btn">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    <div class="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="animate">Hi, I'm <span>Laksindu Janith</span></h1>
+            <p class="animate delay-1">IoT Developer & Web Developer creating innovative Arduino projects and stunning web experiences.</p>
+            <a href="#projects" class="cta-button animate delay-2">View My Work</a>
+            <div class="social-icons animate delay-3">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-behance"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+            </div>
+        </div>
+        <!-- Inside your hero section, after social-icons div -->
+<div class="scroll-down animate delay-4">
+    <a href="#projects" class="scroll-down-link">
+        <i class="fas fa-chevron-down"></i>
+    </a>
+</div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-title">
+            <h2 class="animate">My <span>Projects</span></h2>
+            <p class="animate delay-1">Here are some of my recent Arduino IoT and Web Development projects</p>
+        </div>
+        
+        <!-- Project Filters -->
+        <div class="project-filters animate delay-2">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="iot">IoT Projects</button>
+            <button class="filter-btn" data-filter="arduino">Arduino Projects</button>
+            <button class="filter-btn" data-filter="design">Web Projects</button>
+        </div>
+        
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+            <!-- IoT Project 1 -->
+            <div class="project-card animate delay-3" data-category="arduino">
+                <div class="project-img">
+                    <img src="ChatGPT Image Apr 3, 2025, 08_12_35 PM.png" alt="Smart Home System">
+                </div>
+                <div class="project-info">
+                    <h3>Rc camera rover</h3>
+                    <p>An Arduino-powered RC camera rover with remote navigation and live streaming.</p>
+                    <div class="project-tags">
+                        <span>Arduino</span>
+                        <span>Robotic</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="rcrover.html"><i class="fas fa-external-link-alt"></i> Learn more</a>
+                        <a href="https://drive.google.com/drive/folders/1D9ta3iOdcs4SiAyZFP3yhVOpM5BdCph2?usp=drive_link"><i class="fa-brands fa-google-drive"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Project 1 -->
+            <div class="project-card animate delay-3" data-category="design">
+                <div class="project-img">
+                    <img src="webdevo.png" alt="Brand Identity">
+                </div>
+                <div class="project-info">
+                    <h3>Movee(music listening)</h3>
+                    <p>Movee was created with a simple purpose: to make music accessible to everyone.</p>
+                    <div class="project-tags">
+                        <span>HTML/CSS</span>
+                        <span>JavaScript</span>
+                        <span>cloudflare</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://laksindu.github.io/Movee-/"><i class="fas fa-external-link-alt"></i> View site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arduino Project 1 -->
+            <div class="project-card animate delay-4" data-category="arduino">
+                <div class="project-img">
+                    <img src="cnc_main1.jpg" alt="Robot Arm">
+                </div>
+                <div class="project-info">
+                    <h3>Arduino CNC Printer</h3>
+                    <p>An Arduino CNC printer for automated engraving and precision cutting</p>
+                    <br>
+                    <div class="project-tags">
+                        <span>Arduino</span>
+                        <span>3D Printing</span>
+                        <span>Servos</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="cnc.html"><i class="fas fa-external-link-alt"></i> Learn more</a>
+                        <a href="https://drive.google.com/file/d/16gQJ80UIHA3pMdQbnkqIop8q-KNJT3Rb/view?usp=drive_link"><i class="fa-brands fa-google-drive"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IoT Project 2 -->
+            <div class="project-card animate delay-4" data-category="iot">
+                <div class="project-img">
+                    <img src="ir3.png" alt="Weather Station">
+                </div>
+                <div class="project-info">
+                    <h3>Universal ir iot remort</h3>
+                    <p>An IoT-enabled universal IR remote that captures and replays IR signals for seamless control of any IR device</p>
+                    <div class="project-tags">
+                        <span>IoT</span>
+                        <span>Home Automation</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="iriot.html"><i class="fas fa-external-link-alt"></i> Learn more</a>
+                        <a href="#"><i class="fa-brands fa-google-drive"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Project 2 -->
+            <div class="project-card animate delay-3" data-category="design">
+                <div class="project-img">
+                    <img src="gamesite.png" alt="Mobile App UI">
+                </div>
+                <div class="project-info">
+                    <h3>Movee games</h3>
+                    <p> Our platform is completely free to download any games without any issus.</p><br>
+                    <div class="project-tags">
+                        <span>HTML/CSS</span>
+                        <span>JavaScript</span>
+                        <span>CloudDB</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://laksindu.github.io/Movee-/game.html"><i class="fas fa-external-link-alt"></i> View site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arduino Project 2 -->
+            <div class="project-card animate delay-4" data-category="arduino">
+                <div class="project-img">
+                    <img src="game1.jpeg" alt="LED Matrix">
+                </div>
+                <div class="project-info">
+                    <h3>UnoJoy Game Controller</h3>
+                    <p>An Arduino Uno-powered joystick controller for seamless, customizable gameplay.</p>
+                    <div class="project-tags">
+                        <span>Arduino</span>
+                        <span>HMI</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="game.html"><i class="fas fa-external-link-alt"></i> Learn more</a>
+                        <a href="https://drive.google.com/file/d/1--sA13THUKWluPHfe-90pVqx4FBFTJoc/view?usp=drive_link"><i class="fa-brands fa-google-drive"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card animate delay-4" data-category="arduino">
+                <div class="project-img">
+                    <img src="bluetooth.png" alt="LED Matrix">
+                </div>
+                <div class="project-info">
+                    <h3>Arduino Bluetooth car</h3>
+                    <p>An Arduino-powered Bluetooth car with wireless control via a mobile app.</p>
+                    <br>
+                    <div class="project-tags">
+                        <span>Arduino</span>
+                        <span>Robotic</span>
+                        <span>Bluetooth</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="bluetooth.html"><i class="fas fa-external-link-alt"></i> Learn more</a>
+                        <a href="https://github.com/laksindu/bluetoothcar.git"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card animate delay-3" data-category="design">
+                <div class="project-img">
+                    <img src="bmw.png" alt="Mobile App UI">
+                </div>
+                <div class="project-info">
+                    <h3>BMW fan Website</h3>
+                    <p>Complete UI/UX design for a BMW enthusiast website showcasing models, history, and performance highlights.</p>
+                    <div class="project-tags">
+                        <span>Figma</span>
+                        <span>UI/UX</span>
+                        <span>Prototyping</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-external-link-alt"></i> View site</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card animate delay-4" data-category="iot">
+                <div class="project-img">
+                    <img src="alexasmart.png" alt="Weather Station">
+                </div>
+                <div class="project-info">
+                    <h3>Smart extension cord</h3>
+                    <p>An ESP32-powered smart extension for remote switch control, integrated with Alexa for voice commands</p>
+                    <div class="project-tags">
+                        <span>IoT</span>
+                        <span>Home Automation</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="alexa.html"><i class="fas fa-external-link-alt"></i> Learn more</a>
+                        <a href="#"><i class="fa-brands fa-google-drive"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card animate delay-4" data-category="iot">
+                <div class="project-img">
+                    <img src="jammer.png" alt="Weather Station">
+                </div>
+                <div class="project-info">
+                    <h3>Mini Wifi jammer</h3>
+                    <p>A mini DIY WiFi jammer that disrupts wireless signals within a limited range.</p><br>
+                    <div class="project-tags">
+                        <span>IoT</span>
+                        <span>Networking</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="jammer.html"><i class="fas fa-external-link-alt"></i> Learn more</a>
+                        <a href="https://drive.google.com/file/d/1H-mPAyESH29VI5ZmjlRecf993arkYhNS/view?usp=drive_link"><i class="fa-brands fa-google-drive"></i>Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card animate delay-3" data-category="design">
+                <div class="project-img">
+                    <img src="pythagoras calculator.png" alt="Mobile App UI">
+                </div>
+                <div class="project-info">
+                    <h3>Pythagoras Calculator</h3>
+                    <p>A powerful tool designed for quick and accurate Pythagorean calculations.</p><br>
+                    <div class="project-tags">
+                        <span>HTML/CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://laksindu.github.io/pythagorastheorem/"><i class="fas fa-external-link-alt"></i> View site</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-title">
+            <h2 class="animate">My <span>Skills</span></h2>
+            <p class="animate delay-1">Technologies and tools I'm proficient in</p>
+        </div>
+        <div class="skills-container">
+            <!-- IoT Skills -->
+            <div class="skill-category animate delay-1">
+                <h3>Hardware Development</h3>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">Arduino</span>
+                        <span class="skill-percent">95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">ESP8266/ESP32</span>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">Sensor Integration</span>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">Raspberry Pi</span>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Skills -->
+            <div class="skill-category animate delay-2">
+                <h3>IOT & Connectivity</h3><br>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">MQTT</span>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">API Integration</span>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">Bluetooth</span>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">Wifi networking</span>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Programming Skills -->
+            <div class="skill-category animate delay-3">
+                <h3>Web Development</h3><br>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">HTML</span>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">CSS</span>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">JavaScript</span>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">Responsive Design</span>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-title">
+            <h2 class="animate">About <span>Me</span></h2>
+            <p class="animate delay-1">Get to know me better</p>
+        </div>
+        <div class="about-container">
+            <div class="about-content animate delay-2">
+                <p style="margin-bottom: 20px;">I am an IoT developer and web developer with a talent for bringing creative technical ideas to life.My journey began in school when I became addicted to electronics and the magic of turning code into something real and interactive..</p>
+                <p style="margin-bottom: 20px;">With over 2 years of hands-on experience, I've built everything from smart Arduino-based systems to sleek, responsive websites. I love mixing technical problem-solving with clean, user-friendly design - that's where I find the perfect balance between functionality and experience.</p>
+                <p>Outside of building and coding, I'm usually experimenting with new sensors, diving into open source projects, or keeping up with the latest in web and technology. I'm always up for a good challenge, especially if it pushes me to learn something new or step up my creative game.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-title">
+            <h2 class="animate">Get In <span>Touch</span></h2>
+            <p class="animate delay-1">Have a project in mind or want to collaborate? Feel free to reach out!</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info animate delay-1">
+                <h3>Let's Talk About Your Project</h3>
+                <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision. Don't hesitate to get in touch.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>laksindujanith18104@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p>+94 762653429</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-text">
+                            <h4>Location</h4>
+                            <p>Kandy, Sri Lanka</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="footer-logo">Tech<span>Portfolio</span></a>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-behance"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="copyright">© 2025 Laksindu janith thanthreege.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Mobile Navigation Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const overlay = document.querySelector('.overlay');
+        const closeBtn = document.querySelector('.close-btn');
+
+        menuToggle.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        overlay.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close mobile nav when clicking on a link
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Project Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const categories = card.getAttribute('data-category').split(' ');
+                        if (categories.includes(filterValue)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+
+        // Animate skills on scroll
+        const skillBars = document.querySelectorAll('.skill-progress');
+        
+        function animateSkills() {
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    if (entry.target.classList.contains('skill-category')) {
+                        animateSkills();
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Subtle Particle.js configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 30,  // Fewer particles
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#00ff88"  // Matches your theme
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.3,  // More transparent
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 200,  // Lines appear further apart
+                    "color": "#00ff88",
+                    "opacity": 0.2,  // More subtle lines
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1.5,  // Slower movement
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": false,  // Disable click interaction
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 200,
+                        "line_linked": {
+                            "opacity": 0.5
+                        }
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+        // Add this to your existing JavaScript
+document.querySelectorAll('.scroll-down-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+    </script>
+</body>
+</html>
